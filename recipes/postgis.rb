@@ -3,7 +3,7 @@
 # Recipe:: postgis
 #
 
-if platform?("debian")
+if platform?("debian") && node[:lsb][:codename] != 'jessie'
   log "The `postgis` recipe is not available for Debian at this time" do
     level :warn
   end
